@@ -13,8 +13,8 @@ public class ProductServiceImpl implements ProductService{
 	@Autowired
 	private ProductRepository productRepository;
 	@Override
-	public List<Product> searchProducts(String query) {
-		List<Product> products=productRepository.searchProducts(query);
+	public List<Product> searchProducts(String name) {
+		List<Product> products=productRepository.searchProducts(name);
 		return products;
 	}
 	@Override
