@@ -8,14 +8,14 @@ import com.example.Dto.Product;
 
 public interface ProductRepository extends JpaRepository<Product, Integer>{
 	@Query("SELECT p FROM Product p WHERE "+
-			"p.name LIKE CONCAT('%',:query,'%')" +
-			"Or p.description LIKE CONCAT('%',:query,'%')")	
-	List<Product> searchProducts(String query);
+			"p.name LIKE CONCAT('%',:name,'%')" +
+			"Or p.description LIKE CONCAT('%',:name,'%')")	
+	List<Product> searchProducts(String name);
 	
 	@Query(value="SELECT * FROM products p WHERE " +
-			"p.name LIKE CONCAT('%', :query,'%')"+
-			"Or p.description LIKE CONCAT('%',:query,'%')",nativeQuery=true)	
-			List<Product> searchProductsSQL(String query);
+			"p.name LIKE CONCAT('%', :name,'%')"+
+			"Or p.description LIKE CONCAT('%',:name,'%')",nativeQuery=true)	
+			List<Product> searchProductsSQL(String name);
 }
 
 
