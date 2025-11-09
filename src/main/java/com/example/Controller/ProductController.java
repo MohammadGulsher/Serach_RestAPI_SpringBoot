@@ -23,9 +23,9 @@ public class ProductController {
 	private ProductService productService;
 	
 	@GetMapping("/search")
-	public ResponseEntity<List<Product>> searchProducts(@RequestParam("query")String query)
+	public ResponseEntity<List<Product>> searchProducts(@RequestParam("name")String name)
 	{
-		return ResponseEntity.ok(productService.searchProducts(query));
+		return ResponseEntity.ok(productService.searchProducts(name));
 	}
 	
 	@PostMapping("/crateProduct")
